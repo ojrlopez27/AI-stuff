@@ -1,0 +1,908 @@
+{
+	"intents": [
+		{
+			"intent": "infDestination",
+			"description": "use this intent when the user's goal is to get guidance and directions to go to a certain place. The entity corresponds to the destination",
+			"examples": [
+				{
+					"input": "how can i get to restroom",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "restroom"
+					}
+				},
+				{
+					"input": "i need to go to cafeteria",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "cafeteria"
+					}
+				},
+				{
+					"input": "take me to living room",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "living room"
+					}
+				},
+				{
+					"input": "how do I get to kitchen",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "kitchen"
+					}
+				},
+				{
+					"input": "how to get to restaurant",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "restaurant"
+					}
+				},
+				{
+					"input": "how do I go to restaurant",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "restaurant"
+					}
+				},
+				{
+					"input": "take me along kitchen",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "kitchen"
+					}
+				},
+				{
+					"input": "navigate to restroom",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "restroom"
+					}
+				},
+				{
+					"input": "i want to go to kitchen",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "kitchen"
+					}
+				},
+				{
+					"input": "which way should I go to get to living room",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "living room"
+					}
+				},
+				{
+					"input": "guide me to living room",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "living room"
+					}
+				},
+				{
+					"input": "lead the way to restaurant",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "restaurant"
+					}
+				},
+				{
+					"input": "bring me to kitchen",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "kitchen"
+					}
+				},
+				{
+					"input": "directions to the office 123",
+					"output": {
+						"user_intent": "infDestination",
+						"extracted_entity": "office 123"
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqDetectAround",
+			"description": "use this intent when the user's goal is to see and find out what's around them. It has no entities associated",
+			"examples": [
+				{
+					"input": "what do you see",
+					"output": {
+						"user_intent": "reqDetectAround",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "what is around",
+					"output": {
+						"user_intent": "reqDetectAround",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "what do you see around",
+					"output": {
+						"user_intent": "reqDetectAround",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "what is around me",
+					"output": {
+						"user_intent": "reqDetectAround",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "are there things around me",
+					"output": {
+						"user_intent": "reqDetectAround",
+						"extracted_entity": ""
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqDetectInFront",
+			"description": "use this intent when the user's goal is to see and find out what's in front of them. It has no entities associated",
+			"examples": [
+				{
+					"input": "what's in front",
+					"output": {
+						"user_intent": "reqDetectInFront",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "what is in front of me",
+					"output": {
+						"user_intent": "reqDetectInFront",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "is there anything in front of me",
+					"output": {
+						"user_intent": "reqDetectInFront",
+						"extracted_entity": ""
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqSearchInFront",
+			"description": "use this intent when the user's goal is to search for a specific object in front of them. The entity is the object to be found.",
+			"examples": [
+				{
+					"input": "is there any door in front",
+					"output": {
+						"user_intent": "reqSearchInFront",
+						"extracted_entity": "door"
+					}
+				},
+				{
+					"input": "is there an desk in front of me",
+					"output": {
+						"user_intent": "reqSearchInFront",
+						"extracted_entity": "desk"
+					}
+				},
+				{
+					"input": "is fridge in front of me",
+					"output": {
+						"user_intent": "reqSearchInFront",
+						"extracted_entity": "fridge"
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqSearchAround",
+			"description": "use this intent when the user's goal is to search for a specific object around them. The entity is the object to be found",
+			"examples": [
+				{
+					"input": "do you see any fridge",
+					"output": {
+						"user_intent": "reqSearchAround",
+						"extracted_entity": "fridge"
+					}
+				},
+				{
+					"input": "is there any chair",
+					"output": {
+						"user_intent": "reqSearchAround",
+						"extracted_entity": "chair"
+					}
+				},
+				{
+					"input": "is there a table",
+					"output": {
+						"user_intent": "reqSearchAround",
+						"extracted_entity": "table"
+					}
+				},
+				{
+					"input": "do you see a tv",
+					"output": {
+						"user_intent": "reqSearchAround",
+						"extracted_entity": "tv"
+					}
+				},
+				{
+					"input": "is there a fridge around",
+					"output": {
+						"user_intent": "reqSearchAround",
+						"extracted_entity": "fridge"
+					}
+				},
+				{
+					"input": "is there any book in this room",
+					"output": {
+						"user_intent": "reqSearchAround",
+						"extracted_entity": "book"
+					}
+				},
+				{
+					"input": "do you see any phone around",
+					"output": {
+						"user_intent": "reqSearchAround",
+						"extracted_entity": "phone"
+					}
+				},
+				{
+					"input": "do you see an computer",
+					"output": {
+						"user_intent": "reqSearchAround",
+						"extracted_entity": "computer"
+					}
+				},
+				{
+					"input": "do you see the table",
+					"output": {
+						"user_intent": "reqSearchAround",
+						"extracted_entity": "table"
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqDistanceToObj",
+			"description": "use this intent when the user's goal is to calculate the distance to an object. The entity is the object to calculate the distance to",
+			"examples": [
+				{
+					"input": "what's the distance desk",
+					"output": {
+						"user_intent": "reqDistanceToObj",
+						"extracted_entity": "desk"
+					}
+				},
+				{
+					"input": "what is the distance desk",
+					"output": {
+						"user_intent": "reqDistanceToObj",
+						"extracted_entity": "desk"
+					}
+				},
+				{
+					"input": "what's the distance to the table",
+					"output": {
+						"user_intent": "reqDistanceToObj",
+						"extracted_entity": "table"
+					}
+				},
+				{
+					"input": "what is the distance to the book",
+					"output": {
+						"user_intent": "reqDistanceToObj",
+						"extracted_entity": "book"
+					}
+				},
+				{
+					"input": "how far is door",
+					"output": {
+						"user_intent": "reqDistanceToObj",
+						"extracted_entity": "door"
+					}
+				},
+				{
+					"input": "how far away is the chair",
+					"output": {
+						"user_intent": "reqDistanceToObj",
+						"extracted_entity": "chair"
+					}
+				},
+				{
+					"input": "how far is it to the chair",
+					"output": {
+						"user_intent": "reqDistanceToObj",
+						"extracted_entity": "chair"
+					}
+				},
+				{
+					"input": "how close is the book",
+					"output": {
+						"user_intent": "reqDistanceToObj",
+						"extracted_entity": "book"
+					}
+				},
+				{
+					"input": "how close is chair",
+					"output": {
+						"user_intent": "reqDistanceToObj",
+						"extracted_entity": "chair"
+					}
+				},
+				{
+					"input": "how close am I to table",
+					"output": {
+						"user_intent": "reqDistanceToObj",
+						"extracted_entity": "table"
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqCheckRoomEmpty",
+			"description": "use this intent when the user's goal is to check whether a room is occupied. The entity is the room to be checked if is occupied.",
+			"examples": [
+				{
+					"input": "is the lab empty",
+					"output": {
+						"user_intent": "reqCheckRoomEmpty",
+						"extracted_entity": "lab"
+					}
+				},
+				{
+					"input": "is the bedroom occupied",
+					"output": {
+						"user_intent": "reqCheckRoomEmpty",
+						"extracted_entity": "bedroom"
+					}
+				},
+				{
+					"input": "is there anyone in office 567",
+					"output": {
+						"user_intent": "reqCheckRoomEmpty",
+						"extracted_entity": "office 567"
+					}
+				},
+				{
+					"input": "is there anyone in office 567",
+					"output": {
+						"user_intent": "reqCheckRoomEmpty",
+						"extracted_entity": "office 567"
+					}
+				},
+				{
+					"input": "is someone in printing room",
+					"output": {
+						"user_intent": "reqCheckRoomEmpty",
+						"extracted_entity": "printing room"
+					}
+				},
+				{
+					"input": "is the lab busy",
+					"output": {
+						"user_intent": "reqCheckRoomEmpty",
+						"extracted_entity": "lab"
+					}
+				},
+				{
+					"input": "is the office 567 being used",
+					"output": {
+						"user_intent": "reqCheckRoomEmpty",
+						"extracted_entity": "office 567"
+					}
+				},
+				{
+					"input": "are there people in the John's office",
+					"output": {
+						"user_intent": "reqCheckRoomEmpty",
+						"extracted_entity": "John's office"
+					}
+				},
+				{
+					"input": "is the lab available",
+					"output": {
+						"user_intent": "reqCheckRoomEmpty",
+						"extracted_entity": "lab"
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqObjPosition",
+			"description": "use this intent when the user's goal is to calculate the position of an object. The entity is the object to calculate the position of.",
+			"examples": [
+				{
+					"input": "where is the computer",
+					"output": {
+						"user_intent": "reqObjPosition",
+						"extracted_entity": "computer"
+					}
+				},
+				{
+					"input": "where is the desk located at",
+					"output": {
+						"user_intent": "reqObjPosition",
+						"extracted_entity": "desk"
+					}
+				},
+				{
+					"input": "which is the location of the phone",
+					"output": {
+						"user_intent": "reqObjPosition",
+						"extracted_entity": "phone"
+					}
+				},
+				{
+					"input": "look for the table",
+					"output": {
+						"user_intent": "reqObjPosition",
+						"extracted_entity": "table"
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqRecognizeSpecificText",
+			"description": "use this intent when the user's goal is to find a specific word written somewhere. The entity is the word or words to be found.",
+			"examples": [
+				{
+					"input": "can you read pets not allowed",
+					"output": {
+						"user_intent": "reqRecognizeSpecificText",
+						"extracted_entity": "pets not allowed"
+					}
+				},
+				{
+					"input": "do you read do not enter",
+					"output": {
+						"user_intent": "reqRecognizeSpecificText",
+						"extracted_entity": "do not enter"
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqRecognizeAllText",
+			"description": "use this intent when the user's goal is to read a text or sign. it has no entities associated.",
+			"examples": [
+				{
+					"input": "read",
+					"output": {
+						"user_intent": "reqRecognizeAllText",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "read whatever you see in front",
+					"output": {
+						"user_intent": "reqRecognizeAllText",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "can you read this for me",
+					"output": {
+						"user_intent": "reqRecognizeAllText",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "what does it say",
+					"output": {
+						"user_intent": "reqRecognizeAllText",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "what's written here",
+					"output": {
+						"user_intent": "reqRecognizeAllText",
+						"extracted_entity": ""
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqRepeatInstruction",
+			"description": "use this intent when the user's goal is for the system to repeat the last instruction. It has no entities",
+			"examples": [
+				{
+					"input": "can you repeat that",
+					"output": {
+						"user_intent": "reqRepeatInstruction",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "say it again",
+					"output": {
+						"user_intent": "reqRepeatInstruction",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "repeat the last instruction",
+					"output": {
+						"user_intent": "reqRepeatInstruction",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "what was that",
+					"output": {
+						"user_intent": "reqRepeatInstruction",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "what did you say",
+					"output": {
+						"user_intent": "reqRepeatInstruction",
+						"extracted_entity": ""
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqLost",
+			"description": "use this intent when the user's goal is to ask for help when they are lost. It has no entities associated.",
+			"examples": [
+				{
+					"input": "I'm lost",
+					"output": {
+						"user_intent": "reqLost",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "keep navigating",
+					"output": {
+						"user_intent": "reqLost",
+						"extracted_entity": ""
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqRelocate",
+			"description": "use this intent when the user's goal is to relocate themselves. It has no entities associated.",
+			"examples": [
+				{
+					"input": "relocate",
+					"output": {
+						"user_intent": "reqRelocate",
+						"extracted_entity": ""
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqEcholocation",
+			"description": "use this intent when the user's goal is to echo locate or find an object by echolocation. The entity corresponds to the object to be echolocated.",
+			"examples": [
+				{
+					"input": "echo locate phone",
+					"output": {
+						"user_intent": "reqEcholocation",
+						"extracted_entity": "phone"
+					}
+				},
+				{
+					"input": "echo-locate fridge",
+					"output": {
+						"user_intent": "reqEcholocation",
+						"extracted_entity": "fridge"
+					}
+				},
+				{
+					"input": "echolocate computer",
+					"output": {
+						"user_intent": "reqEcholocation",
+						"extracted_entity": "computer"
+					}
+				},
+				{
+					"input": "echo location phone",
+					"output": {
+						"user_intent": "reqEcholocation",
+						"extracted_entity": "phone"
+					}
+				},
+				{
+					"input": "echolocation desk",
+					"output": {
+						"user_intent": "reqEcholocation",
+						"extracted_entity": "desk"
+					}
+				},
+				{
+					"input": "locate table",
+					"output": {
+						"user_intent": "reqEcholocation",
+						"extracted_entity": "table"
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqCheckChairEmpty",
+			"description": "use this intent when the user's goal is to find an unoccupied seat or chair. There's no entity associated.",
+			"examples": [
+				{
+					"input": "is there any seat available",
+					"output": {
+						"user_intent": "reqCheckChairEmpty",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "are there any empty seats",
+					"output": {
+						"user_intent": "reqCheckChairEmpty",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "are there any open seats nearby",
+					"output": {
+						"user_intent": "reqCheckChairEmpty",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "is there a place to sit",
+					"output": {
+						"user_intent": "reqCheckChairEmpty",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "are there any free chairs close by",
+					"output": {
+						"user_intent": "reqCheckChairEmpty",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "is there anywhere I can sit down",
+					"output": {
+						"user_intent": "reqCheckChairEmpty",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "point a place where I can sit",
+					"output": {
+						"user_intent": "reqCheckChairEmpty",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "are there any unoccupied seats",
+					"output": {
+						"user_intent": "reqCheckChairEmpty",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "find an available seat",
+					"output": {
+						"user_intent": "reqCheckChairEmpty",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "find an available chair",
+					"output": {
+						"user_intent": "reqCheckChairEmpty",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "find a seat",
+					"output": {
+						"user_intent": "reqCheckChairEmpty",
+						"extracted_entity": ""
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqAnchorInfo",
+			"description": "use this intent when the user's goal is to query information about an object. The entity corresponds to the object to get information about.",
+			"examples": [
+				{
+					"input": "start getting anchor information",
+					"output": {
+						"user_intent": "reqAnchorInfo",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "start object information",
+					"output": {
+						"user_intent": "reqAnchorInfo",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "start exploration",
+					"output": {
+						"user_intent": "reqAnchorInfo",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "start fridge interaction",
+					"output": {
+						"user_intent": "reqAnchorInfo",
+						"extracted_entity": "fridge"
+					}
+				},
+				{
+					"input": "explore the phone",
+					"output": {
+						"user_intent": "reqAnchorInfo",
+						"extracted_entity": "phone"
+					}
+				},
+				{
+					"input": "provide some information about desk",
+					"output": {
+						"user_intent": "reqAnchorInfo",
+						"extracted_entity": "desk"
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqSceneUnderstanding",
+			"description": "use this intent when the user's goal is to get information about the current scene",
+			"examples": [
+				{
+					"input": "start scene recognition",
+					"output": {
+						"user_intent": "reqSceneUnderstanding",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "start scene understanding",
+					"output": {
+						"user_intent": "reqSceneUnderstanding",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "describe the scene",
+					"output": {
+						"user_intent": "reqSceneUnderstanding",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "start place understanding",
+					"output": {
+						"user_intent": "reqSceneUnderstanding",
+						"extracted_entity": ""
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqStopDescription",
+			"description": "use this intent when the user's goal is to stop scene understanding",
+			"examples": [
+				{
+					"input": "exit recognition",
+					"output": {
+						"user_intent": "reqStopDescription",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "exit description",
+					"output": {
+						"user_intent": "reqStopDescription",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "exit exploration",
+					"output": {
+						"user_intent": "reqStopDescription",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "exit interaction",
+					"output": {
+						"user_intent": "reqStopDescription",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "exit scene understanding",
+					"output": {
+						"user_intent": "reqStopDescription",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "cancel scene understanding",
+					"output": {
+						"user_intent": "reqStopDescription",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "finish place understanding",
+					"output": {
+						"user_intent": "reqStopDescription",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "finish object interaction",
+					"output": {
+						"user_intent": "reqStopDescription",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "cancel",
+					"output": {
+						"user_intent": "reqStopDescription",
+						"extracted_entity": ""
+					}
+				}
+			]
+		},
+		{
+			"intent": "reqDescribeSurroundings",
+			"description": "use this intent when the user's goal is to get a detailed description of the surroundings",
+			"examples": [
+				{
+					"input": "provide a description of the surroundings",
+					"output": {
+						"user_intent": "reqDescribeSurroundings",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "scan the surroundings",
+					"output": {
+						"user_intent": "reqDescribeSurroundings",
+						"extracted_entity": ""
+					}
+				},
+				{
+					"input": "describe the surroundings",
+					"output": {
+						"user_intent": "reqDescribeSurroundings",
+						"extracted_entity": ""
+					}
+				}
+			]
+		},
+		{
+			"intent": "unknown",
+			"description": "use this intent when the none of the intents above matches the input",
+			"examples": [
+				{
+					"input": "how old are you",
+					"output": {
+						"user_intent": "unknown",
+						"extracted_entity": ""
+					}
+				}
+			]
+		}
+	]
+}
