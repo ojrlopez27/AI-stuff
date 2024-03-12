@@ -5,8 +5,7 @@
 import ollama
 from langchain_community.document_loaders import WebBaseLoader, JSONLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import GPT4AllEmbeddings
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.embeddings import OllamaEmbeddings, GPT4AllEmbeddings, HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 import gradio as gr
@@ -15,8 +14,8 @@ import time
 
 # Initialize variables to store the previous URL and its corresponding data and embeddings
 prev_filename = None
-prev_data = None
-prev_vectorstore = None
+data = None
+vectorstore = None
 
 template = "You are an AI system that performs NLU processing. Given a user utterance (\"input\"), you will generate the " \
            "corresponding user intent (\"user_intent\") and extract the main entity (\"extracted_entity\"). There are 17 " \
@@ -37,7 +36,7 @@ def format_docs(docs):
 # Define the Ollama LLM function
 def ollama_llm(question, context):
     formatted_prompt = f"Question: {question}\n\nContext: {context}"
-    response = ollama.chat(model='mistral',
+    response = ollama.chat(model='mistral:instruct',
                            messages=[{'role': 'user', 'content': formatted_prompt}],
                            options={
                                'num_gpu': 32,
@@ -52,17 +51,36 @@ def ollama_llm(question, context):
 
 
 def rag_chain(filename: str, question: str):
-    global prev_filename, prev_data, prev_vectorstore, qachain, retriever
+    global prev_filename, data, vectorstore, qachain, retriever
     if filename != prev_filename:
         # loader = WebBaseLoader(url)
         loader = JSONLoader(file_path=filename, jq_schema=".intents[]", text_content=False)
-        prev_data = loader.load()
+        data = loader.load()
         prev_filename = filename
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-        all_splits = text_splitter.split_documents(prev_data)
-        prev_vectorstore = Chroma.from_documents(documents=all_splits, embedding=OllamaEmbeddings())
-        # qachain = RetrievalQA.from_chain_type(ollama, retriever=prev_vectorstore.as_retriever())
-        retriever = prev_vectorstore.as_retriever()
+
+        # chunk_size and chunk_overlap are measured in 'characters' (not tokens)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=3000, chunk_overlap=0)
+        docs = text_splitter.split_documents(data)
+
+        # source: https://github.com/langchain-ai/langchain/issues/2026
+        # print(f"You have {len(data)} document")
+        # print(f"You have {len(data[0].page_content)} characters in that document")
+        # for i in docs:
+        #     page_con = i.page_content
+        #     print('page content length: ', len(page_con))
+        #     print('page content: ', page_con)
+
+        embeddings=OllamaEmbeddings(model='llama2',
+                                    num_gpu=32,
+                                    num_thread=48,
+                                    model_kwargs={'device': 'cuda:0'})
+                                   # temperature=0.0)
+                                   # mirostat_eta=0.5)
+        # embeddings = OllamaEmbeddings() #model='mistral:instruct')
+
+        # load the documents into Chroma
+        vectorstore = Chroma.from_documents(documents=docs, embedding=embeddings)
+        retriever = vectorstore.as_retriever()
 
     # Convert the question into embeddings
     retrieved_docs = retriever.invoke(question)
@@ -85,10 +103,22 @@ if use_gui:
                          outputs="text")
     iface.launch()
 else:
+
+    queue = [
+        'I need to go to the kitchen',
+        'I need to take the bottle',
+        'what do you see around?'
+    ]
+
+
     while True:
-        prompt = input("Type your question ('bye' to exit): ")
-        if prompt == 'bye':
+        # prompt = input("Type your question ('bye' to exit): ")
+        # if prompt == 'bye':
+        #     break
+        if len(queue) == 0:
             break
+        prompt = queue.pop()
+        print('prompt: ', prompt)
         start = time.time()
         response = rag_chain(filename="./document.json",
                              question=template.format(prompt=prompt))
