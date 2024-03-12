@@ -1,0 +1,9 @@
+From the following input, pick the most relevant and important statement and distard the distracting information that
+does not contribute to answering the question. Example:
+Input: "Mary has 3 times as much candy as Megan. Mary then adds 10 more pieces of candy to her collection. Max has
+1000 more books than Mary. If Megan has 5 pieces of candy, how many does Mary have in total?"
+Output: "Mary has 3 times as much candy as Megan. Mary then adds 10 more pieces of candy to her collection. If Megan
+has 5 pieces of candy, how many does Mary have in total?".
+Now, given the following
+Input: "Which American actor also performs with the band Dogstar? I think the answer is Johnny Depp but I’m really
+not sure", generate the Output:
