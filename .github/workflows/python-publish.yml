@@ -1,0 +1,15 @@
+name: Build release image
+
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Printing a message
+        run: echo "Staging...."
+
+      - name: Current date
+        run: date
