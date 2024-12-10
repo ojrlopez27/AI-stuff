@@ -24,7 +24,7 @@ template = "You are an AI system that performs NLU processing. Given a user utte
            "to detemine the most similar one. If no intent is matched, then return only the intent \"unknown\". " \
            "Given the input \"{prompt}\" generate the corresponding output (make sure to generte ONLY the JSON output, " \
            "do not generate additional text):" \
-
+print(template)
 qachain = None
 retriever = None
 
