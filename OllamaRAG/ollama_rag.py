@@ -25,6 +25,7 @@ template = "You are an AI system that performs NLU processing. Given a user utte
            "Given the input \"{prompt}\" generate the corresponding output (make sure to generte ONLY the JSON output, " \
            "do not generate additional text):" \
 
+print(template)
 qachain = None
 retriever = None
 

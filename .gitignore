@@ -2,4 +2,5 @@
 **/venv/
 **/.idea/
 /**/.idea/
-
+**/.env
+.env

@@ -1,0 +1,6 @@
+# activate environment
+conda activate ./venv
+
+# install packages:
+pip install 'crewai[tools]' 
+
