@@ -1,0 +1,12 @@
+openai
+dotenv
+langgraph
+langchain_openai
+langchain_community
+IPython
+pygraphviz
+tavily-python
+duckduckgo_search
+bs4
+langgraph-checkpoint-sqlite
+gradio
